@@ -6,7 +6,7 @@ const messageInput = form.querySelector('textarea[name="message"]');
 
 const storageKey = 'feedback-form-state';
 
-// Відстеження подій input і збереження даних у локальне сховище
+
 form.addEventListener('input', (event) => {
   const formData = {
     email: emailInput.value.trim(),
@@ -16,7 +16,7 @@ form.addEventListener('input', (event) => {
   localStorage.setItem(storageKey, JSON.stringify(formData));
 });
 
-// Перевірка стану сховища під час завантаження сторінки
+
 document.addEventListener('DOMContentLoaded', () => {
   const storedData = localStorage.getItem(storageKey);
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// Очищення сховища та полів форми при сабміті
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -36,11 +36,11 @@ form.addEventListener('submit', (event) => {
     message: messageInput.value.trim(),
   };
 
-  // Перевірка, що обидва елементи форми заповнені
+  
   if (formData.email && formData.message) {
-    console.log(formData); // Виведення у консоль об'єкта з даними
-    localStorage.removeItem(storageKey); // Очищення сховища
-    emailInput.value = ''; // Очищення поля email
-    messageInput.value = ''; // Очищення поля message
+    console.log(formData); 
+    localStorage.removeItem(storageKey); 
+    emailInput.value = ''; 
+    messageInput.value = ''; 
   }
 });
