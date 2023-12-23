@@ -1,9 +1,7 @@
 // Описаний в документації
-import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm.js";
+import SimpleLightbox from "simplelightbox";
 // Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
-
-'use strict';
 
 const images = [
   {
@@ -51,7 +49,6 @@ const images = [
     original: 'https://cdn.pixabay.com/photo/2019/05/17/04/35/lighthouse-4208843_1280.jpg',
     description: 'Lighthouse Coast Sea',
   },
- 
 ];
 
 const gallery = document.querySelector('.gallery');
@@ -79,6 +76,5 @@ images.forEach((image) => {
   const galleryItem = createGalleryItem(image);
   gallery.appendChild(galleryItem);
 });
-
 
 const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
